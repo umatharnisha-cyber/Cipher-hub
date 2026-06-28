@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cipher Hub - Cybersecurity Suite</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- jsQR for QR Code Reading -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo" id="logo-btn">
+        <i data-lucide="shield-check"></i>
+        <span>Cipher Hub</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a class="nav-link active" id="nav-home">Home</a></li>
+        <li class="dropdown">
+          <select id="tools-dropdown" class="dropdown-select">
+            <option value="" disabled selected>Select a Tool</option>
+            <option value="password">Password Hub</option>
+            <option value="url">URL Scanner</option>
+            <option value="sms">SMS Scanner</option>
+            <option value="file">File Analyzer</option>
+            <option value="qr">QR Scanner</option>
+            <option value="wifi">WiFi Auditor</option>
+            <option value="logs">Log Analyzer</option>
+          </select>
+        </li>
+        <li><a class="nav-link" id="nav-about">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Work Area -->
+  <main>
+
+    <!-- SECTION 1: HOME -->
+    <section id="section-home" class="app-section active">
+      <div class="hero">
+        <h1>Guard Your Digital Space with <br><span>Cipher Hub Security Suite</span></h1>
+        <p>A comprehensive, client-side cybersecurity toolkit designed to evaluate, secure, and analyze passwords, digital files, wireless networks, links, text messages, and system logs locally and instantly.</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">7</span>
+            <span class="stat-label">Security Tools</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Client-Side Security</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">Zero</span>
+            <span class="stat-label">Data Logged Outside</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <div>
+          <h2>Available Cybersecurity Tools</h2>
+          <p>Explore our suite of security applications. Select a tool to begin.</p>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <!-- Password Card -->
+        <div class="feature-card" data-tool="password">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="key-round"></i>
+          </div>
+          <h3>Password Hub</h3>
+          <p>Analyze password strength against Google standards, calculate real Shannon entropy, and generate cryptographically secure passwords.</p>
+          <span class="feature-link">Analyze Passwords <i data-lucide="arrow-right"></i></span>
+        </div>
+
+        <!-- URL Scanner Card -->
+        <div class="feature-card" data-tool="url">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="link"></i>
+          </div>
+          <h3>URL Scanner</h3>
+          <p>Check website links for phishing patterns, high risk extensions, TLD reputation, protocol vulnerabilities, and domain age safety.</p>
+          <span class="feature-link">Scan URL <i data-lucide="arrow-right"></i></span>
+        </div>
+
+        <!-- SMS Card -->
+        <div class="feature-card" data-tool="sms">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="message-square-warning"></i>
+          </div>
+          <h3>SMS Phishing Scanner</h3>
+          <p>Analyze SMS content for typical smishing patterns, fake bank notices, malicious redirection keywords, and emotional manipulation triggers.</p>
+          <span class="feature-link">Inspect Message <i data-lucide="arrow-right"></i></span>
+        </div>
+
+        <!-- File Analyzer Card -->
+        <div class="feature-card" data-tool="file">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="file-warning"></i>
+          </div>
+          <h3>File Analyzer</h3>
+          <p>Compute cryptographic hashes (SHA-256) locally, examine magic headers for structural manipulation, and check safety indices.</p>
+          <span class="feature-link">Analyze File <i data-lucide="arrow-right"></i></span>
+        </div>
+
+        <!-- QR Scanner Card -->
+        <div class="feature-card" data-tool="qr">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="qr-code"></i>
+          </div>
+          <h3>QR Code Scanner</h3>
+          <p>Scan QR codes via camera feed or photo uploads to decode and audit URL contents, commands, and potential QRLjacking payloads.</p>
+          <span class="feature-link">Scan QR Code <i data-lucide="arrow-right"></i></span>
+        </div>
+
+        <!-- WiFi Auditor Card -->
+        <div class="feature-card" data-tool="wifi">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="wifi"></i>
+          </div>
+          <h3>WiFi Security Auditor</h3>
+          <p>Scan simulated local wireless connections, audit current encryption strengths (WPA2, WPA3), and identify potential WPS exploits.</p>
+          <span class="feature-link">Audit WiFi <i data-lucide="arrow-right"></i></span>
+        </div>
+
+        <!-- Log Analyzer Card -->
+        <div class="feature-card" data-tool="logs">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="terminal"></i>
+          </div>
+          <h3>Log Threat Analyzer</h3>
+          <p>Import access logs, authentication reports, or system journals to detect SQL injections, XSS attempts, directory traversals, and brute force attacks.</p>
+          <span class="feature-link">Inspect Logs <i data-lucide="arrow-right"></i></span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 2: PASSWORD HUB -->
+    <section id="section-password" class="app-section">
+      <div class="tool-layout">
+        <div class="panel">
+          <div class="panel-title">
+            <i data-lucide="key-round"></i>
+            <h2>Password Security</h2>
+          </div>
+          
+          <div class="form-group">
+            <label for="pwd-input">Test Password Strength</label>
+            <input type="text" id="pwd-input" class="input-control" placeholder="Enter password to test...">
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin: 2rem 0; padding-top: 1.5rem;">
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-secondary);">Strong Password Generator</h3>
+            
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <label style="margin-bottom: 0;">Password Length</label>
+                <span class="range-val" id="pwd-length-val">16</span>
+              </div>
+              <div class="range-container">
+                <input type="range" id="pwd-length" min="6" max="64" value="16">
+              </div>
+            </div>
+
+            <div class="switch-group">
+              <label for="pwd-upper">Uppercase Letters (A-Z)</label>
+              <div class="switch">
+                <input type="checkbox" id="pwd-upper" checked>
+                <span class="slider"></span>
+              </div>
+            </div>
+
+            <div class="switch-group">
+              <label for="pwd-lower">Lowercase Letters (a-z)</label>
+              <div class="switch">
+                <input type="checkbox" id="pwd-lower" checked>
+                <span class="slider"></span>
+              </div>
+            </div>
+
+            <div class="switch-group">
+              <label for="pwd-numbers">Include Numbers (0-9)</label>
+              <div class="switch">
+                <input type="checkbox" id="pwd-numbers" checked>
+                <span class="slider"></span>
+              </div>
+            </div>
+
+            <div class="switch-group">
+              <label for="pwd-symbols">Include Symbols (!@#$%^&*)</label>
+              <div class="switch">
+                <input type="checkbox" id="pwd-symbols" checked>
+                <span class="slider"></span>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block" id="btn-generate-pwd">
+              <i data-lucide="refresh-cw"></i> Generate Password
+            </button>
+          </div>
+        </div>
+
+        <div class="result-box" id="pwd-result">
+          <div class="result-placeholder" id="pwd-placeholder">
+            <i data-lucide="key-round"></i>
+            <p>Input a password or generate one to see security audits</p>
+          </div>
+
+          <!-- Password Analysis Dashboard -->
+          <div id="pwd-analysis-dashboard" style="display: none;">
+            <div class="password-output-container">
+              <div class="password-output" id="pwd-display">••••••••••••••••</div>
+              <button class="btn btn-secondary" style="padding: 0.5rem 0.75rem;" id="btn-copy-pwd" title="Copy to Clipboard">
+                <i data-lucide="copy"></i>
+              </button>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-weight: 700; font-size: 0.95rem; color: var(--text-secondary);">Security Rating</span>
+              <span class="badge" id="pwd-strength-badge">Weak</span>
+            </div>
+
+            <div class="password-strength-meter">
+              <div class="password-strength-bar" id="pwd-bar"></div>
+            </div>
+
+            <div class="entropy-display">
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Shannon Entropy</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;" id="pwd-entropy-lbl">Complexity Indicator</div>
+              </div>
+              <div class="entropy-score" id="pwd-entropy-val">0 bits</div>
+            </div>
+
+            <h3 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-secondary);">Google Password Standards</h3>
+            <ul class="google-rules-list">
+              <li>
+                <i data-lucide="circle-x" class="invalid" id="rule-len-icon"></i>
+                <span id="rule-len">At least 8 characters long</span>
+              </li>
+              <li>
+                <i data-lucide="circle-x" class="invalid" id="rule-upper-icon"></i>
+                <span>Includes uppercase letters</span>
+              </li>
+              <li>
+                <i data-lucide="circle-x" class="invalid" id="rule-lower-icon"></i>
+                <span>Includes lowercase letters</span>
+              </li>
+              <li>
+                <i data-lucide="circle-x" class="invalid" id="rule-num-icon"></i>
+                <span>Includes at least one digit</span>
+              </li>
+              <li>
+                <i data-lucide="circle-x" class="invalid" id="rule-sym-icon"></i>
+                <span>Includes special characters (!@#$%^&*)</span>
+              </li>
+              <li>
+                <i data-lucide="circle-check" class="valid" id="rule-common-icon"></i>
+                <span id="rule-common">Free of simple sequential patterns (e.g. "123456", "qwerty")</span>
+              </li>
+            </ul>
+
+            <div id="pwd-remediation" class="threat-list" style="margin-top: 1.5rem;">
+              <!-- Dynamic advice card -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 3: URL SCANNER -->
+    <section id="section-url" class="app-section">
+      <div class="tool-layout">
+        <div class="panel">
+          <div class="panel-title">
+            <i data-lucide="link"></i>
+            <h2>URL Vulnerability Scanner</h2>
+          </div>
+          <div class="form-group">
+            <label for="url-input">Target URL Address</label>
+            <input type="text" id="url-input" class="input-control" placeholder="e.g. https://secure-bank.com/login">
+          </div>
+          <button class="btn btn-primary btn-block" id="btn-scan-url">
+            <i data-lucide="search"></i> Inspect Link
+          </button>
+        </div>
+
+        <div class="result-box">
+          <div class="result-placeholder" id="url-placeholder">
+            <i data-lucide="globe"></i>
+            <p>Input a website link URL above to scan for safety parameters, domain reputation, and SSL validity</p>
+          </div>
+
+          <div id="url-results" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 700;" id="url-scanned-domain">domain.com</h3>
+              <span class="badge" id="url-status-badge">Safe</span>
+            </div>
+
+            <div class="entropy-display" style="margin-bottom: 1.5rem;">
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Threat Vulnerability Score</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;" id="url-risk-verdict">Calculated Risk Index</div>
+              </div>
+              <div class="entropy-score" id="url-risk-score">0 / 100</div>
+            </div>
+
+            <h4 style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-secondary);">Security Indicators Evaluated</h4>
+            <div class="threat-list" id="url-threat-findings">
+              <!-- Dynamically populated scan variables -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 4: SMS SCANNER -->
+    <section id="section-sms" class="app-section">
+      <div class="tool-layout">
+        <div class="panel">
+          <div class="panel-title">
+            <i data-lucide="message-square-warning"></i>
+            <h2>SMS Phishing Scanner</h2>
+          </div>
+          <div class="form-group">
+            <label for="sms-input">Message Body</label>
+            <textarea id="sms-input" class="input-control" placeholder="Paste the SMS or text message details here..."></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" id="btn-scan-sms">
+            <i data-lucide="scan-face"></i> Audit Message
+          </button>
+        </div>
+
+        <div class="result-box">
+          <div class="result-placeholder" id="sms-placeholder">
+            <i data-lucide="message-square"></i>
+            <p>Paste the SMS text context to audit suspicious links, phishing tactics, or urgent commands</p>
+          </div>
+
+          <div id="sms-results" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 700;">SMS Threat Report</h3>
+              <span class="badge" id="sms-status-badge">Safe</span>
+            </div>
+
+            <div class="entropy-display" style="margin-bottom: 1.5rem;">
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Smishing Risk Index</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;" id="sms-verdict-text">Safety assessment</div>
+              </div>
+              <div class="entropy-score" id="sms-risk-score">0%</div>
+            </div>
+
+            <h4 style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-secondary);">Phishing Metrics Triggers</h4>
+            <div class="threat-list" id="sms-threat-findings">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 5: FILE ANALYZER -->
+    <section id="section-file" class="app-section">
+      <div class="tool-layout">
+        <div class="panel">
+          <div class="panel-title">
+            <i data-lucide="file-warning"></i>
+            <h2>File Threat Inspector</h2>
+          </div>
+          
+          <div class="upload-zone" id="file-drop-zone">
+            <i data-lucide="upload-cloud"></i>
+            <p>Drag and drop your file here</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">or click to browse filesystem</p>
+            <span>Files are processed securely inside your browser</span>
+            <input type="file" id="file-input" style="display: none;">
+          </div>
+        </div>
+
+        <div class="result-box">
+          <div class="result-placeholder" id="file-placeholder">
+            <i data-lucide="file-code-2"></i>
+            <p>Load or drag-and-drop a file to calculate hashes and audit signatures for manipulation risks</p>
+          </div>
+
+          <div id="file-results" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 700;" id="file-result-name">document.pdf</h3>
+              <span class="badge" id="file-status-badge">Safe</span>
+            </div>
+
+            <div class="file-info-bar">
+              <div>
+                <strong>File Size:</strong> <span id="file-result-size">0 KB</span>
+              </div>
+              <div>
+                <strong>MIME Type:</strong> <span id="file-result-type">application/octet-stream</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>SHA-256 Signature Hash</label>
+              <div class="password-output-container" style="padding: 0.5rem 0.75rem; margin-bottom: 1rem;">
+                <div class="password-output" id="file-hash" style="font-size: 0.85rem; word-break: break-all; white-space: normal;">-</div>
+                <button class="btn btn-secondary" style="padding: 0.4rem 0.6rem;" id="btn-copy-hash" title="Copy Hash">
+                  <i data-lucide="copy" style="width: 16px; height: 16px;"></i>
+                </button>
+              </div>
+            </div>
+
+            <h4 style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-secondary);">Malware Engine Findings</h4>
+            <div class="threat-list" id="file-threat-findings">
+              <!-- Findings pop here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 6: QR SCANNER -->
+    <section id="section-qr" class="app-section">
+      <div class="tool-layout">
+        <div class="panel">
+          <div class="panel-title">
+            <i data-lucide="qr-code"></i>
+            <h2>QR Security Scanner</h2>
+          </div>
+
+          <div class="qr-tabs">
+            <button type="button" class="qr-tab-btn active" id="qr-tab-upload">Upload Photo</button>
+            <button type="button" class="qr-tab-btn" id="qr-tab-webcam">Scan with Camera</button>
+          </div>
+
+          <!-- Tab 1: Upload Photo -->
+          <div id="qr-panel-upload">
+            <div class="upload-zone" id="qr-drop-zone">
+              <i data-lucide="image"></i>
+              <p>Drag and drop a QR image here</p>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">or click to upload picture</p>
+              <input type="file" id="qr-file-input" accept="image/*" style="display: none;">
+            </div>
+            <div id="qr-file-preview-container" style="display: none; text-align: center; margin-bottom: 1rem;">
+              <img id="qr-file-preview" style="max-height: 150px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            </div>
+          </div>
+
+          <!-- Tab 2: Webcam scan -->
+          <div id="qr-panel-webcam" style="display: none;">
+            <div class="qr-video-container">
+              <video id="qr-video" autoplay playsinline></video>
+              <div class="qr-scanner-overlay">
+                <div class="qr-target-box"></div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="btn btn-outline btn-block" id="btn-start-qr-cam">
+                <i data-lucide="video"></i> Start Camera
+              </button>
+              <button type="button" class="btn btn-secondary" id="btn-stop-qr-cam" disabled>
+                <i data-lucide="video-off"></i> Stop
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-box">
+          <div class="result-placeholder" id="qr-placeholder">
+            <i data-lucide="scan"></i>
+            <p>Upload a QR code photo or start the webcam stream to decode and audit safety parameters</p>
+          </div>
+
+          <div id="qr-results" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 700;">QR Code Safety Verdict</h3>
+              <span class="badge" id="qr-status-badge">Unknown</span>
+            </div>
+
+            <div class="form-group">
+              <label>Decoded QR Contents</label>
+              <div class="logs-terminal" style="max-height: 100px; padding: 0.75rem; color: #f8fafc; font-size: 0.9rem;" id="qr-decoded-text">
+                -
+              </div>
+            </div>
+
+            <h4 style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-secondary);">Decoded Security Scan</h4>
+            <div class="threat-list" id="qr-threat-findings">
+              <!-- Threat listings populated here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 7: WIFI AUDITOR -->
+    <section id="section-wifi" class="app-section">
+      <div class="tool-layout">
+        <div class="panel">
+          <div class="panel-title">
+            <i data-lucide="wifi"></i>
+            <h2>WiFi Security Auditor</h2>
+          </div>
+          
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Select one of the virtual hotspots detected in proximity to perform a security and vulnerability audit, or input your manual settings.
+          </p>
+
+          <button class="btn btn-primary btn-block" style="margin-bottom: 1.5rem;" id="btn-scan-wifi-networks">
+            <i data-lucide="refresh-cw"></i> Scan Airwaves
+          </button>
+
+          <div class="wifi-mesh" id="wifi-network-list">
+            <!-- Populated dynamically via tools.js -->
+            <div style="text-align: center; padding: 2rem; color: var(--text-muted);">
+              <i data-lucide="radio" style="width: 2rem; height: 2rem; margin-bottom: 0.5rem; opacity: 0.5;"></i>
+              <p style="font-size: 0.85rem;">Click 'Scan Airwaves' to map networks in range</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-box">
+          <div class="result-placeholder" id="wifi-placeholder">
+            <i data-lucide="shield-alert"></i>
+            <p>Scan and select a wireless network hotspot to analyze WPA/WPA2/WPA3 configuration profiles, vulnerability to deauth attacks, and crack times.</p>
+          </div>
+
+          <div id="wifi-results" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 700;" id="wifi-audit-name">Hotspot SSID</h3>
+              <span class="badge" id="wifi-status-badge">Safe</span>
+            </div>
+
+            <div class="log-scan-summary" style="margin-bottom: 1.5rem;">
+              <div class="log-summary-card">
+                <div class="log-summary-num" id="wifi-audit-signal">100%</div>
+                <div class="log-summary-lbl">Signal</div>
+              </div>
+              <div class="log-summary-card">
+                <div class="log-summary-num" id="wifi-audit-security">WPA3</div>
+                <div class="log-summary-lbl">Encryption</div>
+              </div>
+              <div class="log-summary-card">
+                <div class="log-summary-num" id="wifi-audit-wps">NO</div>
+                <div class="log-summary-lbl">WPS Active</div>
+              </div>
+            </div>
+
+            <h4 style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-secondary);">Wireless Audit Log & Findings</h4>
+            <div class="threat-list" id="wifi-threat-findings">
+              <!-- Dynamic Wifi details -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 8: LOG ANALYZER -->
+    <section id="section-logs" class="app-section">
+      <div class="tool-layout">
+        <div class="panel">
+          <div class="panel-title">
+            <i data-lucide="terminal"></i>
+            <h2>Log Threat Analyzer</h2>
+          </div>
+          
+          <div class="form-group">
+            <label for="logs-textarea">Paste Authentication / Access Logs</label>
+            <textarea id="logs-textarea" class="input-control" placeholder="127.0.0.1 - - [28/Jun/2026:12:00:01] &quot;GET /admin/login.php?user=admin' OR 1=1..."></textarea>
+          </div>
+
+          <div style="text-align: center; margin: 1rem 0; color: var(--text-muted); font-size: 0.85rem; position: relative;">
+            <span style="background-color: var(--bg-secondary); padding: 0 0.5rem; position: relative; z-index: 1;">OR</span>
+            <div style="position: absolute; top: 50%; left: 0; right: 0; border-top: 1px solid var(--border); z-index: 0;"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="logs-file-input" class="btn btn-outline btn-block">
+              <i data-lucide="file-symlink"></i> Upload Log File (.log, .txt)
+            </label>
+            <input type="file" id="logs-file-input" style="display: none;" accept=".log,.txt">
+          </div>
+
+          <div style="display: flex; gap: 0.5rem; margin-top: 1.5rem;">
+            <button class="btn btn-primary btn-block" id="btn-analyze-logs">
+              <i data-lucide="activity"></i> Audit Log Content
+            </button>
+            <button class="btn btn-outline" id="btn-load-sample-logs" title="Load Sample Log Entries">
+              Sample
+            </button>
+          </div>
+        </div>
+
+        <div class="result-box">
+          <div class="result-placeholder" id="logs-placeholder">
+            <i data-lucide="file-chart-line"></i>
+            <p>Provide server logs, firewall entries, or auth records to process, audit, parse attacks, and visualize severity parameters</p>
+          </div>
+
+          <div id="logs-results" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 700;">Security Audit Dashboard</h3>
+              <span class="badge" id="logs-status-badge">Safe</span>
+            </div>
+
+            <div class="log-scan-summary">
+              <div class="log-summary-card">
+                <div class="log-summary-num" id="logs-sum-total">0</div>
+                <div class="log-summary-lbl">Parsed Lines</div>
+              </div>
+              <div class="log-summary-card">
+                <div class="log-summary-num" id="logs-sum-events" style="color: var(--danger);">0</div>
+                <div class="log-summary-lbl">Threat Events</div>
+              </div>
+              <div class="log-summary-card">
+                <div class="log-summary-num" id="logs-sum-ips">0</div>
+                <div class="log-summary-lbl">Unique IPs</div>
+              </div>
+            </div>
+
+            <label style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem;">Security Scanner Events & Output</label>
+            <div class="logs-terminal" id="logs-terminal-output">
+              <!-- Logs findings lines go here -->
+            </div>
+
+            <div class="log-dashboard-grid">
+              <div class="log-chart-box">
+                <canvas id="logs-chart-severity"></canvas>
+              </div>
+              <div class="log-chart-box">
+                <canvas id="logs-chart-threat-types"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 9: ABOUT SECTION -->
+    <section id="section-about" class="app-section">
+      <div class="about-hero">
+        <div class="about-avatar">UH</div>
+        <h2>Umat Harnishaba</h2>
+        <p>Cybersecurity Application Developer</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary);">
+            <i data-lucide="graduation-cap" style="color: var(--primary);"></i> Developer Information
+          </h3>
+          <ul class="about-info-list">
+            <li>
+              <span class="info-label">Name</span>
+              <span class="info-val">Umat Harnishaba</span>
+            </li>
+            <li>
+              <span class="info-label">College</span>
+              <span class="info-val">SIR BPTI BHAVNAGAR</span>
+            </li>
+            <li>
+              <span class="info-label">Organization</span>
+              <span class="info-val">IBM SkillsBuild Skill-Based Training Program 2026</span>
+            </li>
+            <li>
+              <span class="info-label">Guideliner</span>
+              <span class="info-val">AYUSH KUMAR (CSRBOX)</span>
+            </li>
+            <li>
+              <span class="info-label">Contact</span>
+              <span class="info-val">
+                <a href="mailto:umatharnisha@gmail.com" style="color: var(--primary); text-decoration: none;">umatharnisha@gmail.com</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary);">
+            <i data-lucide="mail" style="color: var(--primary);"></i> Write a Review
+          </h3>
+          <form class="review-form" id="about-review-form">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="review-rating">Overall Rating</label>
+              <select id="review-rating" class="input-control" required style="appearance: auto;">
+                <option value="5">★★★★★ (5/5 Excellence)</option>
+                <option value="4">★★★★☆ (4/5 Very Good)</option>
+                <option value="3">★★★☆☆ (3/5 Average)</option>
+                <option value="2">★★☆☆☆ (2/5 Needs Improvement)</option>
+                <option value="1">★☆☆☆☆ (1/5 Unsatisfactory)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="review-comment">Feedback & Review Details</label>
+              <textarea id="review-comment" class="input-control" placeholder="Write your review comments here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <i data-lucide="send"></i> Submit Review via Mail
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.5rem; justify-content: center; align-items: center;">
+      <p>&copy; 2026 Cipher Hub. Developed by <strong>Umat Harnishaba</strong> under the <strong>IBM SkillsBuild Program</strong>.</p>
+      <p>Guidance by <strong>Ayush Kumar (CSRBOX)</strong>. All tools analyze data 100% client-side for total privacy.</p>
+    </div>
+  </footer>
+
+  <!-- App Logic Scripts -->
+  <script src="tools.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
