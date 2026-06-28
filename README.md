@@ -56,58 +56,5 @@ Chart.js	Interactive security dashboard charts and visualizations
 Lucide Icons	Modern icon library for clean UI elements
 Google Fonts (Outfit)	Premium typography
 Getting Started
-No installation or dependencies needed! Just serve the files locally:
-
-Option 1: Python (Recommended)
-bash
-
-# Clone the repository
-git clone https://github.com/yourusername/cipher-hub.git
-# Navigate to the project directory
-cd cipher-hub
-# Start local server
-python -m http.server 8000
-Then open : http://localhost:8000 in your browser.
-
-Option 2: VS Code Live Server
-Install the Live Server extension in VS Code
-Open the project folder
-Right-click index.html → "Open with Live Server"
-Option 3: Open Directly
-Simply double-click index.html to open in your browser (some features like webcam require a server).
-
-Project Structure
-
-cipher-hub/
-│
-├── index.html          # Main application shell with all tool sections
-├── styles.css          # Premium light-theme CSS design system
-├── app.js              # SPA routing, navigation sync, review mailer
-└── tools.js            # All 7 cybersecurity tool implementations
-Project Context
-Detail	Info
-Developer	Umat Harnishaba
-College	SIR BPTI BHAVNAGAR
-Organization	IBM SkillsBuild Skill-Based Training Program 2026
-Guideliner	Ayush Kumar (CSRBOX)
-Contact	
-umatharnisha@gmail.com
-Privacy Guarantee
-Cipher Hub is built with a zero-trust, offline-first philosophy:
-
-No backend server or API calls
-No analytics or tracking scripts
-No user data stored, logged, or transmitted
-All computations (hashing, scanning, decoding) happen in-browser
-License
-Distributed under the MIT License. See LICENSE for more information.
-
-Acknowledgements
-jsQR — QR code decoding library
-Chart.js — Beautiful charting library
-Lucide Icons — Icon library
-Google Fonts — Outfit typeface
-IBM SkillsBuild — Training program framework
-Made with : by Umat Harnishaba under the IBM SkillsBuild Program 2026
-Guidance by Ayush Kumar (CSRBOX)
+No installation or dependencies needed! Just serve the files locally
 
